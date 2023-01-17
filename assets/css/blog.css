@@ -1,0 +1,8 @@
+.header-link {
+    display: inline;
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}

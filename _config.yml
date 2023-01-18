@@ -23,14 +23,14 @@ email: dferrand@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   IBM i, POWER and Storage blog.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://dferrand.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://bigblueblog.xyz" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: dferrand 
 github_username:  dferrand
 
 source: .
 destination: ./_site
-permalink: /:title
-paginate: 3
+permalink: pretty
+paginate: 10
 paginate_path: /page/:num/
 
 # Build settings

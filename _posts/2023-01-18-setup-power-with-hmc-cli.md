@@ -9,7 +9,7 @@ The common way to setup a POWER server using the HMC GUI (web interface). While 
 - **Stability:** While the GUI is always changing, sometimes radically, the CLI is very stable, new features are introduced but in a forward compatible way.
 - **Repeatability:** It is very easy to setup several identical servers with CLI, a simple find/replace or scripting will allow to repeat the process.
 - **Conciseness:** For documentation purposes, the CLI commands will generally be much more concise than many screenshots from the GUI, it is also searchable.
-- **Globalization:** The GUI is displayed in the web browser's language which is nice for the user but can be problemactic since your screenshots will be in one language only. On the other hand, the CLI has no translation, it is english only.
+- **Globalization:** The GUI is displayed in the web browser's language which is nice for the user but can be problematic since your screenshots will be in one language only. On the other hand, the CLI has no translation, it is english only.
 
 # Connecting POWER server to HMC
 

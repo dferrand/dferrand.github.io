@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Setup a POWER server using HMC CLI"
-date:   2023-01-16 18:00:00 -0500
+date:   2023-01-18 10:00:00 -0500
 categories: power hmc cli
 ---
 

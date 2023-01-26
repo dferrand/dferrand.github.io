@@ -156,7 +156,7 @@ In this example, if we want to use the first port of the card in slot C10 (addre
 
 The command to install a VIOS from the HMC is `installios`. If used without parameter, the command will start a wizard prompting you for LPAR and network information to perform installation.
 
-To perform an unattended use the command like this:
+To perform an unattended install, use the command like this:
 
 <pre>installios -s <i>power_name</i> -p <i>partition_name</i> -r <i>profile_name</i> -i <i>vios_ip</i> -d <i>'/extra/viosimages/vios31410/dvdimage.v1.iso'</i> -g <i>gateway_ip</i> -S <i>netmask</i> -m <i>b8:3f:d2:2b:9a:04</i></pre>
 With the following parameters:

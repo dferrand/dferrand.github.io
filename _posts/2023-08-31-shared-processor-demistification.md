@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Shared processors demistification"
-date:   2023-08-31 15:00:00 -0500
+date:   2023-08-31 15:00:00 -0400
 categories: power hmc phyp
 ---
 

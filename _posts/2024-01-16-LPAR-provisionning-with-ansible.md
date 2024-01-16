@@ -71,7 +71,7 @@ Using your favourite editor, create the file <pre>first_lpar.yaml</pre> with the
         hmc_host: hmc_host_or_ip                # CHANGEME host name of IP of the HMC
         hmc_auth:
           username: hscroot                     # CHANGEME username to user to connect to the HMC
-          password: '\{\{ hmc_password \}\}'        # Use the password entered by the user
+          password: '{% raw %}{{ hmc_password }}{% endraw %}'        # Use the password entered by the user
         system_name: S1022                      # CHANGEME name of the POWER server
         vm_name: LPAR_NAME                      # CHANGEME name of the LPAR to create
         virt_network_config:
@@ -147,7 +147,7 @@ Using your favourite editor, create the file <pre>remove_first_lpar.yaml</pre> w
         hmc_host: hmc_host_or_ip                # CHANGEME host name of IP of the HMC
         hmc_auth:
           username: hscroot                     # CHANGEME username to user to connect to the HMC
-          password: '\{\{ hmc_password \}\}'        # Use the password entered by the user
+          password: '{% raw %}{{ hmc_password }}{% endraw %}'        # Use the password entered by the user
         system_name: S1022                      # CHANGEME name of the POWER server
         vm_name: LPAR_NAME                      # CHANGEME name of the LPAR to remove
         state: absent                           # Indicates we want the partition to be deleted if existing

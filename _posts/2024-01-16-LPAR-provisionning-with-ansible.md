@@ -30,31 +30,31 @@ Ansible is mostly agentless, meaning there is no need to install anything on sys
 ## Linux
 
 Most Linux distribution have a package called **ansible** that can be installed:
-- For deb based distributions (Debian, Ubuntu, ...): <pre>sudo apt install ansible</pre>
-- For rpm based distributions (Fedora, RedHat, Suse, ...): <pre>dnf install ansible</pre>
+- For deb based distributions (Debian, Ubuntu, ...): `sudo apt install ansible`
+- For rpm based distributions (Fedora, RedHat, Suse, ...): `dnf install ansible`
 
 ## AIX
 
 The easiest way to install Ansible on AIX is via the AIX toolbox for Open Source Software following this [guide](https://www.ibm.com/support/pages/node/6585774).
 
-Ansible can then be installed with the follozing command: <pre>dnf install ansible<pre>
+Ansible can then be installed with the follozing command: `dnf install ansible`
 
 ## IBM i
 
 On IBM i, install the open source packages following this [guide](http://ibm.biz/ibmi-rpms).
 
-Ansible can then be installed with the following command: <pre>yum install ansible<pre>
+Ansible can then be installed with the following command: `yum install ansible`
 
 Ansible will be accessible in PASE, the easiest way to access it is via ssh.
 
 # Installing the power_hmc collection
 
 Once Ansible is installed, the **power_hmc** collection can be installed with the following command:
-<pre>ansible-galaxy collection install ibm.power_hmc</pre>
+`ansible-galaxy collection install ibm.power_hmc`
 
 # Creating a LPAR with ansible
 
-Using your favourite editor, create the file <pre>first_lpar.yaml</pre> with the following content:
+Using your favourite editor, create the file `first_lpar.yaml` with the following content:
 
 <pre>- hosts: localhost        # We don't use Ansible inventory from HMC
   connection: local       # Run everything on the control node
@@ -100,7 +100,7 @@ Playbooks are in YAML, columning is important! Please read the following about [
 Lines that contain CHANGEME should be adapted to your configuration.
 
 The playbook can be run with the following command:
-<pre>ansible-playbook first_lpar.yaml</pre>
+`ansible-playbook first_lpar.yaml`
 
 Ansible will prompt for the HMC password. Enter it and press enter.
 
@@ -120,9 +120,9 @@ localhost                  : ok=1    changed=1    unreachable=0    failed=0    s
 
 Ansible normally works with a list of machine to manage called the inventory. Since the HMC only has a restricted shell, we can't use the Ansible inventory mechanism. The 2 warnings are related to the lack of inventory and can be ignored.
 
-The line <pre>changed: [localhost]</pre> indicates that the task was successful and made a change (created the LPAR in our case).
+The line `changed: [localhost]` indicates that the task was successful and made a change (created the LPAR in our case).
 
-If we run the same command again we should get a similar output except for the line <pre>ok: [localhost]</pre> indicating that the task was successful and didn't make any change (since the LPAR was already existing).
+If we run the same command again we should get a similar output except for the line `ok: [localhost]` indicating that the task was successful and didn't make any change (since the LPAR was already existing).
 
 I noticed two limitations on the module currently:
 * It is not possible to set the tagged IO for IBM i LPAR from Ansible. The load source adapter has to be set manually in the HMC.
@@ -130,7 +130,7 @@ I noticed two limitations on the module currently:
 
 # Deleting a LPAR with Ansible
 
-Using your favourite editor, create the file <pre>remove_first_lpar.yaml</pre> with the following content:
+Using your favourite editor, create the file `remove_first_lpar.yaml` with the following content:
 
 <pre>- hosts: localhost        # We don't use Ansible inventory from HMC
   connection: local       # Run everything on the control node
@@ -158,9 +158,9 @@ Lines that contain CHANGEME should be adapted to your configuration. **Warning, 
 This file is similar to the one used to create the partition, we simply removed the LPAR configuration information and changed state from present to absent.
 
 The playbook can be run with the following command:
-<pre>ansible-playbook remove_first_lpar.yaml</pre>
+`ansible-playbook remove_first_lpar.yaml`
 
-This should delete the partition indicated on the vm_name line.
+This should delete the partition indicated on the `vm_name` line.
 
 # References
 

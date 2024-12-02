@@ -36,7 +36,7 @@ We can the read from both cursors and calculate the distance for each pair and s
 We can then send the information to the user with the snd-msg opcode.
 
 Here is the RPG code for part 1:
-```**free
+<pre>**free
 
 // One parameter: the path to the input file
 dcl-pi *n;
@@ -83,7 +83,7 @@ exec sql close c2;
 snd-msg *info 'Distance is '+%char(diff) %target(*pgmbdy:1);
 
 *inlr = *on;
-return;```
+return;</pre>
 
 # Part 2
 
@@ -92,7 +92,7 @@ In part 2, we'll use the same input as in part 1.
 This time, we'll calculate the similarity score: for each element of the first list, the similarity score is the value of the element multiplied by the number of times it appears in the second list.
 
 This can be done with a single SQL instruction, here is the full RPG code:
-```**free
+<pre>**free
 
 // One parameter: the path to the input file
 dcl-pi *n;
@@ -114,4 +114,4 @@ exec sql select sum(integer(substring(a.line, 1, 5)) * (select
 snd-msg *info 'Similarity score is '+%char(sim) %target(*pgmbdy:1);
 
 *inlr = *on;
-return;```
+return;</pre>

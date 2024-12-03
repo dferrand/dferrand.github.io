@@ -21,13 +21,13 @@ The IFS file can easily be read using [QSYS2.IFS_READ_UTF8](https://www.ibm.com/
 
 Finding valid instructions can easily be done using [regular expressions](https://en.wikipedia.org/wiki/Regular_expression) which can be used in RPG programs via SQL.
 
-The regular expression to identify valid instructions is <pre>mul\((\d{1,3}),(\d{1,3})\)</pre>. See [here](https://regex101.com/r/LFlIzS/2) for an explenation of this regular expression.
+The regular expression to identify valid instructions is ```mul\((\d{1,3}),(\d{1,3})\)```. See [here](https://regex101.com/r/LFlIzS/2) for an explenation of this regular expression.
 
 Each report can be devided into levels with the %SPLIT RPG built-in function. We can iterate over the levels extracted by %SPLIT with the for-each instruction.
 
-We use the <pre>REGEXP_COUNT</pre> SQL function to check how many matches are found.
+We use the ```REGEXP_COUNT``` SQL function to check how many matches are found.
 
-We then do a for loop to process each match. For each match, we use <pre>REGEXP_SUBSTR</pre> twice to extract the parameters of the mul() function. We the multiply those two values and add it to the result.
+We then do a for loop to process each match. For each match, we use ```REGEXP_SUBSTR``` twice to extract the parameters of the mul() function. We the multiply those two values and add it to the result.
 
 Here is the RPG code for part 1:
 <pre>**free
@@ -108,9 +108,9 @@ Only the lastest do() or don't() instruction applies. We consider that mul instr
 
 We introduce a global indicator variable inDo that contains *on if mul instructions are enabled and *off otherwise.
 
-We use a slightly more complex regular expression to find the next valid instruction: <pre>mul\((\d{1,3}),(\d{1,3})\)|do\(\)|don't\(\)</pre> see [here](https://regex101.com/r/2kFkoY/1) for an explanation of this regular expression.
+We use a slightly more complex regular expression to find the next valid instruction: ```mul\((\d{1,3}),(\d{1,3})\)|do\(\)|don't\(\)``` see [here](https://regex101.com/r/2kFkoY/1) for an explanation of this regular expression.
 
-We use the <pre>REGEXP_INSTR</pre> SQL to return the position of the first valid instruction in the string. If no valid instruction is found, it returns 0.
+We use the ```REGEXP_INSTR``` SQL to return the position of the first valid instruction in the string. If no valid instruction is found, it returns 0.
 
 We analyse the 3 characters at the returned position to determine which instruction was found with RPG select/when-is structure:
 * if we have 'do(', it means it's a do() instruction, so we set inDo to *on

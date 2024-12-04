@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Advent of Code 2024 day 4, RPG edition"
-date:   2024-12-03 12:00:00 -0400
+date:   2024-12-04 12:00:00 -0400
 categories: adventofcode rpg
 ---
 

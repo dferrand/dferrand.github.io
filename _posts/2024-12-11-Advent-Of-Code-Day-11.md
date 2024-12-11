@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Advent of Code 2024 day 10, RPG edition"
-date:   2024-12-10 20:00:00 -0400
+title:  "Advent of Code 2024 day 11, RPG edition"
+date:   2024-12-11 16:00:00 -0400
 categories: adventofcode rpg
 ---
 
